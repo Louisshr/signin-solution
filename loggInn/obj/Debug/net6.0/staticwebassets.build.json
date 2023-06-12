@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Oe7ZSsa30JU4IBO7Vojmg3xtdYnjBD86NAla28BBkcQ=",
+  "Source": "loggInn",
+  "BasePath": "_content/loggInn",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "loggInn/wwwroot",
+      "Source": "loggInn",
+      "ContentRoot": "/Users/priyamshrestha/Desktop/visual/loggInn/loggInn/loggInn/wwwroot/",
+      "BasePath": "_content/loggInn",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/priyamshrestha/Desktop/visual/loggInn/loggInn/loggInn/wwwroot/index.html",
+      "SourceId": "loggInn",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/priyamshrestha/Desktop/visual/loggInn/loggInn/loggInn/wwwroot/",
+      "BasePath": "_content/loggInn",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/index.html"
+    }
+  ]
+}
