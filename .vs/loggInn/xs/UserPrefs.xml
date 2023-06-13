@@ -1,4 +1,37 @@
 ﻿<Properties StartupConfiguration="{95294290-54F5-4415-82D6-80E72EFF9313}|Default">
-  <MonoDevelop.Ide.ItemProperties.loggInn FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.loggInn PreferredExecutionTarget="/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="loggInn/Program.cs">
+    <Files>
+      <File FileName="loggInn/Program.cs" Line="7" Column="1" />
+      <File FileName="loggInn/DAL/DBinit.cs" Line="9" Column="1" />
+      <File FileName="loggInn/DAL/KundeContekst.cs" Line="18" Column="31" />
+      <File FileName="loggInn/wwwroot/index.html" Line="8" Column="12" />
+      <File FileName="../KundeApp2-med-DB 2/KundeApp2/DAL/DBInit.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="../KundeApp2-med-DB 2/KundeApp2/Startup.cs" Line="14" Column="1" NotebookId="1" />
+      <File FileName="../../../React/login_funksjon/login/login/Program.cs" Line="1" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="loggInn" expanded="True">
+            <Node name="loggInn" expanded="True">
+              <Node name="DAL" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="wwwroot" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
