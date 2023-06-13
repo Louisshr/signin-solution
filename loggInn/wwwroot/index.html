@@ -2,17 +2,45 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="js/validating.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title></title>
 </head>
 <body>
     <h1>sign in</h1>
     <br />
-    <input id="username" placeholder="username" type="text"/>
-    <input id="password" placeholder="password"/>
-    <button onclick="signIn()">sign in</button>   
+    <input id="username" placeholder="username" type="text" />
+    <p id="invalidUsername" style="color:red"></p>
+    <input id="password" placeholder="password" />
+    <p id="invalidPassword" style="color:red"></p>   
+    <button onclick="signIn()">sign in</button>
+    <p id="error" style="color:red"></p>
 </body>
 </html>
-
 <script>
-    
+    function signIn()
+    {
+        const usernameOK = validateUsername($("#username").val());
+        const passwordOK = validatePassword($("#password").val());
+
+        if (usernameOK && passwordOK)
+        {
+            const user = {
+                username: $("#username").val(),
+                password: $("#password").val()
+            }
+
+            $.post("Kunde/signIn", user, function (OK) {
+                if (OK) {
+                    console.log("du har logget inn");
+                }
+                else {
+                    $("#error").html("wrong username or password");
+                }
+            })
+                .fail(function () {
+                    $("#error").html("an error occured at the server, try again later");
+                });
+        }       
+    }
 </script>

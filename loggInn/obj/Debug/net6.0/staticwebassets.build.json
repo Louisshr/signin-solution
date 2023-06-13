@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Oe7ZSsa30JU4IBO7Vojmg3xtdYnjBD86NAla28BBkcQ=",
+  "Hash": "CNWU0AEuXyolCn4jpjp1nXfWqQHhXYBkVWW6dyo9lEY=",
   "Source": "loggInn",
   "BasePath": "_content/loggInn",
   "Mode": "Default",
@@ -32,6 +32,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
+    },
+    {
+      "Identity": "/Users/priyamshrestha/Desktop/visual/loggInn/loggInn/loggInn/wwwroot/js/validating.js",
+      "SourceId": "loggInn",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/priyamshrestha/Desktop/visual/loggInn/loggInn/loggInn/wwwroot/",
+      "BasePath": "_content/loggInn",
+      "RelativePath": "js/validating.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/validating.js"
     }
   ]
 }

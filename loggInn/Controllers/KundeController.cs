@@ -1,5 +1,6 @@
 ﻿using System;
 using loggInn.DAL;
+using loggInn.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace loggInn.Controllers
@@ -14,10 +15,13 @@ namespace loggInn.Controllers
             _db = db;
         }
 
-        [HttpGet]
-        public string helloWorld()
+        [HttpPost]
+        public async Task<ActionResult<bool>> signIn(User user)
         {
-            return "Hello world";
+            Console.WriteLine("BRUKERNAV: " + user.username);
+            Console.WriteLine("PASSORD: " + user.password);
+
+            return Ok(true);
         }
     }
 }
