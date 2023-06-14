@@ -35,6 +35,21 @@ namespace loggInn.Controllers
             }
                           
         }
+
+        [HttpPost]
+        public async Task<ActionResult<bool>> register(User user)
+        {
+            try
+            {
+                bool registerOK = await _db.register(user);
+                return registerOK ? Ok(true) : Ok(false);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest("error on backend");
+            }
+        }
     }
 }
 

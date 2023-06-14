@@ -64,6 +64,36 @@ namespace loggInn.DAL
                 return false;
             }
         }
+
+        public async Task<bool> register(User user)
+        {
+            try
+            {
+                if (user.username != null && user.password != null)
+                {
+                    Users? foundUser = await _db.Users.FirstOrDefaultAsync(u => user.username == u.Username);
+                    if (foundUser == null)
+                    {
+                        Users newUser = new Users();
+                        newUser.Username = user.username;
+                        byte[] salt = KundeRepository.createSalt();
+                        byte[] hash = KundeRepository.createHash(user.password, salt);
+                        newUser.Password = hash;
+                        newUser.Salt = salt;
+
+                        await _db.Users.AddAsync(newUser);
+                        await _db.SaveChangesAsync();
+                        return true;
+                    }
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false; 
+            }
+        }
     }
 }
 

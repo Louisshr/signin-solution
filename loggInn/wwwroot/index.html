@@ -25,8 +25,8 @@
                 <span style="color:red" id="invalidPassword"></span>
             </div>
             <p id="error" style="color:red"></p>
-            <button type="submit" class="btn btn-primary">sign in</button>
-
+            <button type="submit" onclick="signIn()" class="btn btn-primary">sign in</button>
+            <button class="btn" onclick="register()">register</button>
         </form>
     </div>
 
@@ -43,13 +43,11 @@
 </html>
 <script>    
     document.getElementById("signin-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        signIn();
+        event.preventDefault();        
     })
     
-
     function signIn()
-    {                
+    {
         const usernameOK = validateUsername($("#username").val());
         const passwordOK = validatePassword($("#password").val());        
 
@@ -62,6 +60,7 @@
             $.post("Kunde/signIn", user, function (OK) {
                 if (OK) {
                     console.log("du har logget inn");
+                    window.location.href = "homepage.html";
                 }
                 else {
                     $("#error").html("wrong username or password");
@@ -71,5 +70,9 @@
                     $("#error").html("an error occured at the server, try again later");
                 });
         }        
+    }
+
+    function register() {
+        window.location.href = "register.html";
     }
 </script>

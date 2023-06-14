@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/validating.js"></script>
+</head>
+<body>
+    <div class="col-sm-3 sign-in-container">
+        <h1 id="register-header">Register</h1>
+        <form id="register-form">
+            <div class="form-group">
+                <label style="font-weight: 400" for="username">write your desired username</label>
+                <input id="username" type="text" class="form-control" />
+                <span style="color:red" id="invalidUsername"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-weight: 400" for="password">create a password</label>
+                <input id="password" type="password" class="form-control" />
+                <span style="color:red" id="invalidPassword"></span>
+            </div>
+            <button class="btn btn-success" type="submit" onclick="register()">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    document.getElementById("register-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+    })
+
+    function register() {
+        const usernameOK = validateUsername($("#username").val());
+        const passwordOK = validatePassword($("#password").val());
+
+        if (usernameOK && passwordOK) {
+            const user = {
+                username: $("#username").val(),
+                password: $("#password").val()
+            }
+
+            $.post("Kunde/register", user, function (OK) {
+                if (OK) {                    
+                    window.location.href = "homepage.html";
+                }
+                else {
+                    $("#error").html("wrong username or password");
+                }
+            })
+                .fail(function () {
+                    $("#error").html("an error occured at the server, try again later");
+                });
+        }
+    }
+</script>
+
