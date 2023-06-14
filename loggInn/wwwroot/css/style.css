@@ -1,0 +1,19 @@
+﻿html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    border: 1px solid black
+}
+
+.sign-in-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#sign-in-header {
+    margin-bottom: 30px;
+}

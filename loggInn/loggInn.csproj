@@ -19,6 +19,7 @@
     <Folder Include="Controllers\" />
     <Folder Include="Model\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\css\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
@@ -27,5 +28,6 @@
   <ItemGroup>
     <Content Remove="wwwroot\" />
     <Content Remove="wwwroot\js\" />
+    <Content Remove="wwwroot\css\" />
   </ItemGroup>
 </Project>
