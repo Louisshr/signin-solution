@@ -30,8 +30,20 @@ namespace loggInn.DAL
         {
             var csp = new RNGCryptoServiceProvider();
             var salt = new Byte[24];
-            csp.GetBytes(salt);
+            csp.GetBytes(salt);          
             return salt;
+
+            /*
+             * hvis koden under brukes, kan koden over fjernes
+             * 
+            var salt = new byte[24];
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);                
+            }
+            return salt;
+            */
+
         }
 
         public async Task<bool> signIn(User user)

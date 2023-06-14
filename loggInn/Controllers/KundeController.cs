@@ -18,10 +18,22 @@ namespace loggInn.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> signIn(User user)
         {
-            Console.WriteLine("BRUKERNAV: " + user.username);
-            Console.WriteLine("PASSORD: " + user.password);
+            try
+            {
+                bool credentialsOK = await _db.signIn(user);
 
-            return Ok(true);
+                if (credentialsOK)
+                {
+                    return Ok(true);
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return BadRequest("error on backend");
+            }
+                          
         }
     }
 }
