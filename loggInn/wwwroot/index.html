@@ -12,15 +12,21 @@
 <body>       
     <div class="col-sm-3 sign-in-container">
         <h1 id="sign-in-header">sign in</h1>
-        <form>
-            <div class="input-group form-group">
-                <span class="input-group-addon" id="basic-addon1">@</span>
-                <input id="username" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+        <form id="signin-form">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">@</span>
+                    <input id="username" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                </div>
+                <span style="color:red" id="invalidUsername"></span>
             </div>
             <div class="form-group">
                 <input id="password" type="password" class="form-control" placeholder="password" />
+                <span style="color:red" id="invalidPassword"></span>
             </div>
-            <button class="btn btn-primary">sign in</button>
+            <p id="error" style="color:red"></p>
+            <button type="submit" class="btn btn-primary">sign in</button>
+
         </form>
     </div>
 
@@ -35,14 +41,19 @@
     </div>
 </body>
 </html>
-<script>
-    function signIn()
-    {
-        const usernameOK = validateUsername($("#username").val());
-        const passwordOK = validatePassword($("#password").val());
+<script>    
+    document.getElementById("signin-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        signIn();
+    })
+    
 
-        if (usernameOK && passwordOK)
-        {
+    function signIn()
+    {                
+        const usernameOK = validateUsername($("#username").val());
+        const passwordOK = validatePassword($("#password").val());        
+
+        if (usernameOK && passwordOK) {
             const user = {
                 username: $("#username").val(),
                 password: $("#password").val()
@@ -59,6 +70,6 @@
                 .fail(function () {
                     $("#error").html("an error occured at the server, try again later");
                 });
-        }       
+        }        
     }
 </script>
